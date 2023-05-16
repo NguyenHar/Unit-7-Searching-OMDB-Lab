@@ -1,0 +1,20 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "MovieSearch";
+}
+
+<form asp-method="post" asp-action="MovieSearchResults">
+    <p>Title of movie <input type="text" name="Title"</p>
+    <input type="submit" />
+</form>
+
+<div>
+    @if (@Model != null)
+    {
+        <h2>Title: @Model.Title</h2>
+        <p>Release Year: @Model.Year</p>
+        <p>Rated: @Model.Rated</p>
+        <p>Runtime: @Model.Runtime</p>
+        <img src="@Model.Poster">
+    }
+</div>
